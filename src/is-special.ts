@@ -1,4 +1,4 @@
-import { isFunction, isInt, isObject } from "./is-basic"
+import { isFunction, isInt, isObject } from "./is-basic.js"
 
 /**
  * Checks if the given value is array-like. It must be an object and have an integer `length`

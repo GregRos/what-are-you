@@ -6,8 +6,8 @@ import {
     isString,
     isSymbol,
     isThenable
-} from "./is-basic"
-import { isAsyncIterable, isDoddle, isIterable, isNextable } from "./is-special"
+} from "./is-basic.js"
+import { isAsyncIterable, isDoddle, isIterable, isNextable } from "./is-special.js"
 
 /**
  * Gets a short value type name, which can be used in a message.

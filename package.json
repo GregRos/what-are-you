@@ -1,6 +1,6 @@
 {
   "name": "what-are-you",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Assortment of type-related checks and information.",
   "keywords": [
     "type",
@@ -33,14 +33,15 @@
   ],
   "scripts": {
     "build": "tsc -b .",
-    "clean": "shx rm -rf dist",
+    "clean": "shx rm -rf dist .buildinfo",
     "build:clean": "run-s clean build",
     "prepare": "husky install",
     "watch": "tsc -b . --watch",
     "lint:fix": "prettier --write src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,ctsx,mtsx,html,htm,yaml,yml,json,scss,css} && eslint --fix src/**/*.{ts,mts,cts,js,mjs,cjs} ",
     "lint:check": "prettier --check src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,ctsx,mtsx,html,htm,yaml,yml,json,scss,css} && eslint src/**/*.{ts,mts,cts,js,mjs,cjs}",
     "prepublishOnly": "node tools/packaging.cjs",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "tidy": "yarn install && run-s lint:fix build:clean test prepublishOnly"
   },
   "lint-staged": {
     "*.{ts,mts,cts,js,mjs,cjs}": "node_modules/.bin/eslint --cache --fix",
