@@ -1,6 +1,6 @@
 {
   "name": "what-are-you",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "Assortment of type-related checks and information.",
   "keywords": [
     "type",
@@ -10,7 +10,10 @@
     "type-check",
     "type-test"
   ],
-  "repository": "github:gregros/what-are-you",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GregRos/what-are-you.git"
+  },
   "license": "MIT",
   "author": "GregRos",
   "sideEffects": false,
