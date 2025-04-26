@@ -33,15 +33,13 @@ export function getNiceClassName(something: any) {
     if (!isObject(something)) {
         return getNiceTypeOf(something)
     }
-    if (something === null) {
-        return "null"
-    }
 
     let name: string | undefined
     if (something.constructor) {
         name = getFunctionName(something.constructor)
     }
-    return name && name !== "Object" ? name : (getObjectStringTag(something) ?? "Object")
+    const o = "Object"
+    return name && name !== o ? name : (getObjectStringTag(something) ?? o)
 }
 
 export function getObjectStringTag(object: any) {
@@ -66,8 +64,6 @@ function _getShortObjectString(object: any) {
         return `async iterable ${getNiceClassName(object)}`
     } else if (isNextable(object)) {
         return `iterator ${getNiceClassName(object)}`
-    } else if (isDoddle(object)) {
-        return object.toString()
     } else if (isThenable(object)) {
         return `a Promise`
     } else {

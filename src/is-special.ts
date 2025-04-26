@@ -53,5 +53,5 @@ export function isNextable<T>(value: any): value is Iterator<T> | AsyncIterator<
 export function isDoddle<T>(value: any): value is {
     pull(): T
 } {
-    return isObject(value) && typeof value.pull === "function" && typeof value.map === "function"
+    return isObject(value) && isFunction(value.pull) && isFunction(value.map)
 }

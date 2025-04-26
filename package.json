@@ -1,6 +1,6 @@
 {
   "name": "what-are-you",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "Assortment of type-related checks and information.",
   "keywords": [
     "type",
@@ -13,17 +13,27 @@
   "repository": "github:gregros/what-are-you",
   "license": "MIT",
   "author": "GregRos",
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      },
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "node": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
     }
   },
-  "main": "dist/index.js",
-  "types": "dist/index",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
   "files": [
     "dist",
     "src",
