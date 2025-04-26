@@ -1,26 +1,24 @@
-import path from "path";
-
 /** @type {import("jest").Config} */
-const config = {
-    testEnvironment: "node",
-    testPathIgnorePatterns: ["dist"],
+export default {
     transform: {
-        "^.+\\.tsx?$": ["@swc/jest"]
+        "^.+\\.ts$": [
+            "ts-jest",
+            {
+                tsconfig: "<rootDir>/test/tsconfig.json",
+                transpileOnly: true
+            }
+        ]
     },
-    rootDir: ".",
-    testMatch: ["<rootDir>/test/**/*.test.ts"],
-    // Should be set via --coverage option
-    collectCoverage: false,
-    collectCoverageFrom: ["<rootDir>/src/**/*.ts"],
-    coverageDirectory: "<rootDir>/coverage",
     moduleNameMapper: {
-        "^@lib/(.*)$": "<rootDir>/src/$1",
-        "^@lib$": "<rootDir>/src"
+        // map .js to .ts
+        "^(\\.{1,2}/.*)\\.js$": "$1",
+        "@lib": "<rootDir>/src/index",
+        "@utils": "<rootDir>/src/utils",
+        "@error": "<rootDir>/src/errors/error"
     },
-
-    globals: {
-        defaults: {}
-    }
-};
-
-export default config;
+    testEnvironment: "node",
+    testMatch: ["<rootDir>/test/**/*.test.ts"],
+    collectCoverageFrom: ["<rootDir>/src/**/*.ts"],
+    coverageDirectory: "./coverage",
+    collectCoverage: false
+}

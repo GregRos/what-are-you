@@ -1,13 +1,13 @@
 {
-  "references": [{
-    "path": "src/tsconfig.json"
-  }
-  ,{
-    "path": "test/tsconfig.json"
-  } ],
-  "compilerOptions": {
-    "module": "commonjs",
-    "sourceMap": true
-  },
+  "references": [
+    {
+      "path": "./src/tsconfig.json"
+    },
+    {
+      "path": "./test/tsconfig.json"
+    }
+  ],
+
+  "compilerOptions": {},
   "files": []
 }

@@ -1,5 +1,18 @@
 {
   "name": "what-are-you",
+  "version": "0.1.0",
+  "description": "Assortment of type-related checks and information.",
+  "keywords": [
+    "type",
+    "info",
+    "string",
+    "describe",
+    "type-check",
+    "type-test"
+  ],
+  "repository": "github:gregros/what-are-you",
+  "license": "MIT",
+  "author": "GregRos",
   "exports": {
     ".": {
       "require": "./dist/index.js",
@@ -8,12 +21,8 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "sourcesRoot": "src",
-  "types": "dist/index",
-  "description": "Assortment of type-related checks and information.",
-  "version": "0.1.0",
   "main": "dist/index.js",
-  "repository": "github:gregros/what-are-you",
+  "types": "dist/index",
   "files": [
     "dist",
     "src",
@@ -24,28 +33,17 @@
   "scripts": {
     "build": "tsc -b .",
     "clean": "shx rm -rf dist",
-    "rebuild": "run-s clean build",
+    "build:clean": "run-s clean build",
     "prepare": "husky install",
     "watch": "tsc -b . --watch",
     "lint:fix": "prettier --write src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,ctsx,mtsx,html,htm,yaml,yml,json,scss,css} && eslint --fix src/**/*.{ts,mts,cts,js,mjs,cjs} ",
     "lint:check": "prettier --check src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,ctsx,mtsx,html,htm,yaml,yml,json,scss,css} && eslint src/**/*.{ts,mts,cts,js,mjs,cjs}",
     "test": "jest --coverage"
   },
-  "keywords": [
-    "type",
-    "info",
-    "string",
-    "describe",
-    "type-check",
-    "type-test"
-  ],
-  "author": "GregRos",
-  "license": "MIT",
   "lint-staged": {
     "*.{ts,mts,cts,js,mjs,cjs}": "node_modules/.bin/eslint --cache --fix",
     "src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,ctsx,mtsx,html,htm,yaml,yml,json,scss,css}": "node_modules/.bin/prettier --write"
   },
-  "packageManager": "yarn@4.9.1",
   "devDependencies": {
     "@gregros/eslint-config": "^0.7.1",
     "@swc/core": "^1.11.22",
@@ -68,5 +66,11 @@
     "shx": "^0.4.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3"
+  },
+  "packageManager": "yarn@4.9.1",
+  "sourcesRoot": "src",
+  "dependencies": {
+    "ts-jest": "^29.3.2",
+    "ts-node": "^10.9.2"
   }
 }
