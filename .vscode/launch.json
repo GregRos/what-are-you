@@ -2,15 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run UCD Loader",
-      "runtimeArgs": ["--async-stack-traces", "--stack-trace-limit=1000", "--enable-source-maps"],
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/ucd/experiments/src/${input:EXPERIMENT}.ts",
-      "env": {
-        "ROARR_LOG": "true",
-        "NODE_OPTIONS": "--loader ts-node/esm"
-      }
+      "name": "TEST",
+      "runtimeExecutable": "yarn",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"],
+      "args": ["test", "--watchAll=false", "--passWithNoTests"]
     }
   ]
 }

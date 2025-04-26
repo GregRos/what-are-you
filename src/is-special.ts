@@ -51,7 +51,7 @@ export function isNextable<T>(value: any): value is Iterator<T> | AsyncIterator<
  * @returns True if the value is a Doddle object, false otherwise.
  */
 export function isDoddle<T>(value: any): value is {
-    pull(): unknown
+    pull(): T
 } {
     return isObject(value) && typeof value.pull === "function" && typeof value.map === "function"
 }
