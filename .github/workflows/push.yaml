@@ -39,7 +39,7 @@ jobs:
       - name: lint:check
         run: yarn run lint:check
       - name: test
-        run: yarn run test:coverage
+        run: yarn run test
       - name: code coverage
         uses: coverallsapp/github-action@v2
         with:
