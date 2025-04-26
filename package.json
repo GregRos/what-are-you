@@ -46,7 +46,6 @@
     "*.{ts,mts,cts,js,mjs,cjs}": "node_modules/.bin/eslint --cache --fix",
     "src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,ctsx,mtsx,html,htm,yaml,yml,json,scss,css}": "node_modules/.bin/prettier --write"
   },
-  "dependencies": {},
   "devDependencies": {
     "@gregros/eslint-config": "^0.7.1",
     "@types/jest": "^29.5.14",
