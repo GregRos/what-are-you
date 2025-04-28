@@ -34,3 +34,4 @@ export {
     isIterable,
     isNextable
 } from "./is-special.js"
+export { getPrototypeChain, isInstanceOf, isPrototypeObject } from "./prototypes.js"
