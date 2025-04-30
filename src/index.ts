@@ -1,3 +1,5 @@
+export type { AnyCtor, InstanceTypeOf } from "./ctor-type.js"
+export { createNamedFunction } from "./function.js"
 export {
     getFunctionName,
     getNiceClassName,

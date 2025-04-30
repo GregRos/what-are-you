@@ -1,5 +1,5 @@
-import { isFunction, isObject } from "lodash"
 import { AnyCtor } from "./ctor-type.js"
+import { isFunction, isObject } from "./is-basic.js"
 
 const sCtor = "constructor"
 const sPrototype = "prototype"
@@ -32,7 +32,7 @@ export function isPrototypeObject(obj: object): boolean {
     return isFunction(ctor) && ctorPtoto === obj && isInstanceOf(obj, ctor)
 }
 
-export function getPrototypeChain<T>(obj: T, depth: number): T[] {
+export function getPrototypeChain<T>(obj: T, depth: number = 10000): T[] {
     const chain: T[] = []
     let current: T | null = obj
 
@@ -40,6 +40,7 @@ export function getPrototypeChain<T>(obj: T, depth: number): T[] {
         if (depth <= 0) {
             break
         }
+        depth--
         chain.push(current)
         current = Object.getPrototypeOf(current)
     }
