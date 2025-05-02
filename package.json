@@ -1,6 +1,6 @@
 {
   "name": "what-are-you",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Assortment of type-related checks and information.",
   "keywords": [
     "type",
@@ -27,10 +27,6 @@
       "import": {
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
-      },
-      "node": {
-        "types": "./dist/cjs/index.d.ts",
-        "default": "./dist/cjs/index.js"
       }
     }
   },
